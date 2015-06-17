@@ -1,9 +1,13 @@
 package demo.service;
 
+<<<<<<< HEAD
 import demo.model.Category;
 import demo.model.Developer;
 import demo.model.Employee;
 import demo.repository.DeveloperRepository;
+=======
+import demo.model.Employee;
+>>>>>>> origin/master
 import demo.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,8 +25,11 @@ public class EmployeeService {
 
     @Autowired
     private EmployeeRepository employeeRepository;
+<<<<<<< HEAD
     @Autowired
     private DeveloperRepository developerRepository;
+=======
+>>>>>>> origin/master
 
     public void testEmployees(){
         Calendar cal = Calendar.getInstance();
@@ -32,21 +39,30 @@ public class EmployeeService {
         Date endDate = cal.getTime();
         cal.set(2013,Calendar.APRIL,5);
         Date hiredate = cal.getTime();
+<<<<<<< HEAD
         //Empleado 1
+=======
+>>>>>>> origin/master
         Employee employee = new Employee();
         employee.setName("Victor");
         employee.setLastname("Rojas");
         employee.setSalary(123.7);
         employee.setHireDate(hiredate);
         employeeRepository.save(employee);
+<<<<<<< HEAD
         //Empleado 2
+=======
+>>>>>>> origin/master
         employee = new Employee();
         employee.setName("Jamal");
         employee.setLastname("Backach");
         employee.setSalary(456.9);
         employee.setHireDate(new Date(System.currentTimeMillis()));
         employeeRepository.save(employee);
+<<<<<<< HEAD
         //Empleado 3
+=======
+>>>>>>> origin/master
         employee = new Employee();
         employee.setName("Lili");
         employee.setLastname("Valoran");
@@ -59,6 +75,7 @@ public class EmployeeService {
             System.out.println(employee1.toString());
         }
     }
+<<<<<<< HEAD
 
     public void testDevelopers(){
         //Desarrollador 1
@@ -82,4 +99,6 @@ public class EmployeeService {
             System.out.println(developer.toString());
         }
     }
+=======
+>>>>>>> origin/master
 }
