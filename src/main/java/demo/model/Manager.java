@@ -1,7 +1,10 @@
 package demo.model;
 
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import javax.persistence.PrimaryKeyJoinColumn;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by poo2 on 17/06/2015.
@@ -11,6 +14,9 @@ import javax.persistence.PrimaryKeyJoinColumn;
 public class Manager extends Employee{
 
     private Double bonusSuccess;
+
+    @OneToMany(mappedBy = "manager")
+    private Set<Project> project = new HashSet();
 
     public Manager() {
 
