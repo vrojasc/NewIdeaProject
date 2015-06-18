@@ -28,8 +28,8 @@ public class ManagerService {
         managerRepository.save(manager);
         //Manager 2
         manager = new Manager();
-        manager.setName("Gabriel");
-        manager.setLastname("García Gomez");
+        manager.setName("Hit");
+        manager.setLastname("Hansen");
         manager.setSalary(8435.1);
         manager.setHireDate(new Date());
         manager.setBonusSuccess(manager.getSalary()*16/100);

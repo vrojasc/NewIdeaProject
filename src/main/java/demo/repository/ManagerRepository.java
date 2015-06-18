@@ -11,5 +11,6 @@ import java.util.List;
  */
  public interface ManagerRepository extends PagingAndSortingRepository<Manager, Long> {
      public List<Manager> findByBonusSuccessGreaterThan(@Param("bonusSuccess") Double bonusSuccess);
+     public List<Manager> findByLastname(@Param("lastname") String lastname);
  }
 

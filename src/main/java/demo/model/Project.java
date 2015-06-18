@@ -65,5 +65,11 @@ public class Project {
         this.end_date = end_date;
     }
 
+    public Manager getManager() {
+        return manager;
+    }
 
+    public void setManager(Manager manager) {
+        this.manager = manager;
+    }
 }
