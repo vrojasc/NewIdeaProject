@@ -1,6 +1,8 @@
 package demo.model;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by poo2 on 17/06/2015.
@@ -12,6 +14,10 @@ public class Developer extends Employee{
     @Enumerated(EnumType.STRING)
     private Category category;
 
+
+    @ManyToMany(mappedBy = "developer")
+    private Set<Project> project = new HashSet();
+
     public Developer() {
 
     }
@@ -22,6 +28,14 @@ public class Developer extends Employee{
 
     public void setCategory(Category category) {
         this.category = category;
+    }
+
+    public Set<Project> getProject() {
+        return project;
+    }
+
+    public void setProject(Set<Project> project) {
+        this.project = project;
     }
 
     @Override

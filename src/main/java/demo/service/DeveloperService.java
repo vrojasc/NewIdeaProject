@@ -26,13 +26,21 @@ public class DeveloperService {
         developer.setHireDate(new Date());
         developer.setCategory(Category.SENIOR);
         developerRepository.save(developer);
-        //Desarollador 2
+        //Desarrollador 2
         developer = new Developer();
-        developer.setName("Josua");
+        developer.setName("Josue");
         developer.setLastname("Jean Jonson");
         developer.setSalary(5431.7);
         developer.setHireDate(new Date());
         developer.setCategory(Category.JUNIOR);
+        developerRepository.save(developer);
+        //Desarrollador 3
+        developer = new Developer();
+        developer.setName("Miguel");
+        developer.setLastname("Monsieu Marquez");
+        developer.setSalary(5431.7);
+        developer.setHireDate(new Date());
+        developer.setCategory(Category.ARCHITECT);
         developerRepository.save(developer);
         List<Developer> desarrolladores = developerRepository.findByCategory(Category.JUNIOR);
         for(Developer developer1 : desarrolladores){

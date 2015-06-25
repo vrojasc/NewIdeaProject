@@ -12,5 +12,6 @@ import java.util.List;
  */
   public interface DeveloperRepository extends PagingAndSortingRepository<Developer, Long> {
        public List<Developer> findByCategory(@Param("category") Category category);
+       public List<Developer> findByName(@Param("name") String name);
   }
 

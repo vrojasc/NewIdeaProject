@@ -1,8 +1,12 @@
 package demo.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by poo2 on 17/06/2015.
@@ -28,6 +32,10 @@ public class Project {
 
     @ManyToOne
     private Manager manager;
+
+    @JsonIgnore
+    @ManyToMany
+    private Set<Developer> developer = new HashSet();
 
     public Project() {
 
@@ -63,6 +71,14 @@ public class Project {
 
     public void setEnd_date(Date end_date) {
         this.end_date = end_date;
+    }
+
+    public Set<Developer> getDeveloper() {
+        return developer;
+    }
+
+    public void setDeveloper(Set<Developer> developer) {
+        this.developer = developer;
     }
 
     public Manager getManager() {

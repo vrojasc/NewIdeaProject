@@ -21,7 +21,7 @@ public class ManagerService {
         //Manager 1
         Manager manager = new Manager();
         manager.setName("Gabriel");
-        manager.setLastname("García Gomez");
+        manager.setLastname("Gomez");
         manager.setSalary(4885.45);
         manager.setHireDate(new Date());
         manager.setBonusSuccess(manager.getSalary()*16/100);
