@@ -1,5 +1,6 @@
 package demo.controller;
 
+import demo.exception.DeveloperException;
 import demo.model.Developer;
 import demo.repository.DeveloperRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,5 +38,15 @@ public class DeveloperController {
         }
         //Prueba del nombre
         return developers;
+    }
+
+    @RequestMapping(value = "/{id}",method = RequestMethod.GET)
+    public Developer getById(@PathVariable Long id){
+            Developer developer = developerRepository.findOne(id);
+        if(developer == null)
+            throw new DeveloperException(id);
+        System.out.println(developer.getName()+" - "+developer.getLastname());
+        return developer;
+
     }
 }
