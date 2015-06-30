@@ -47,6 +47,13 @@ public class DeveloperController {
             throw new DeveloperException(id);
         System.out.println(developer.getName()+" - "+developer.getLastname());
         return developer;
+    }
 
+    @RequestMapping(value="/{id}",method = RequestMethod.DELETE)
+    public void deleteById(@PathVariable Long id){
+        Developer developer = developerRepository.findOne(id);
+        if(developer==null)
+            throw new DeveloperException(id);
+        developerRepository.delete(developer);
     }
 }
