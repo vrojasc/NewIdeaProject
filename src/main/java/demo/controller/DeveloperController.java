@@ -57,4 +57,13 @@ public class DeveloperController {
         developerRepository.delete(developer);
         //Prueba de Nombre
     }
+
+    @RequestMapping(value="/{id}",method = RequestMethod.PUT)
+    public Developer updateById(@PathVariable Long id,@RequestBody Developer developer1){
+        if(developerRepository.findOne(id)==null)
+            throw new DeveloperException(id);
+        developer1 = developerRepository.save(developer1);
+        return developer1;
+        //Prueba de Nombre
+    }
 }
