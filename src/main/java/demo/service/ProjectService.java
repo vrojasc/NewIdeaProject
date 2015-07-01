@@ -60,7 +60,6 @@ public class ProjectService {
         }*/
     }
 
-    //Encontrar porque no funciona un
 
     public Project addDeveloper(Long idProject, Long idDeveloper){
 
